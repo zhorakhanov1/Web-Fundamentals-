@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<style>
+	#matrix{
+	  display:flex;
+	  width:300px;
+	  flex-wrap:wrap;
+	  position: absolute;
+	  top:120px;
+	  left:40px;
+	  margin-left: 25px;
+	}
+	
+	#matrix input{
+		border:1px solid black;
+		width:80px;
+		padding:5px;
+		padding-top: 30px;
+		font-size:24px;	
+		display: flex;
+		text-align: center;
+		bottom: 10px;
+	}
+	#result{
+	  font-size:24px;
+	  color:white;
+	  background-color: black;
+	  border: 1px solid black;
+	  border-radius: 7px;
+	  padding-left: 5px;
+	  padding-right: 5px;
+	  position: absolute;
+	  top: 70px;
+	  left:470px;
+
+	}
+	#determinant{
+		border-left:5px solid red; 
+	  font-size:24px;
+	  color:black;
+	  position: absolute;
+	  top:350px;
+	  margin-left: 25px;
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  padding-right: 70px;
+	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
+	#task{
+		font-size: 10px;
+		margin-left: 25px;
+		position: absolute;
+		top:0px;	
+	}
+
+	#calc{
+		margin-left:25px;
+		position: relative;
+	}
+	#cd{
+		border-left:3px solid red;
+		position: absolute;
+	}
+	#back{
+		border:1px solid white;
+		box-shadow: 0px 2px 10px 10px #888888;
+		margin-left:25px;
+		height: 250px;
+		width:350px;
+	}
+	#detresult{
+		position: absolute;
+		left: 475px;
+		top: 110px;
+		font-size: 50px;
+		color: red;
+	}
+	#definition{
+		position: absolute;
+		top: 170px;
+		left: 475px;
+	}
+	#lorem{
+		position: absolute;
+		top: 210px;
+		left: 475px;
+	}
+	#ipsum{
+		position: absolute;
+		top: 240px;
+		left: 475px;
+		font-size: 18px;
+	}
+</style>
+	<script>
+		function calculateDeterminant(){
+			var qwer = document.getElementById("s11").value*(document.getElementById("s22").value* document.getElementById("s33").value-document.getElementById("s23").value *document.getElementById("s32").value) - document.getElementById("s12").value * (document.getElementById("s21").value*document.getElementById("s33").value - document.getElementById("s23").value*document.getElementById("s31").value) + document.getElementById("s13").value*(document.getElementById("s21").value*document.getElementById("s32").value - document.getElementById("s22").value *document.getElementById("s31").value);
+			document.getElementById("detresult").innerHTML = document.getElementById("s11").value*(document.getElementById("s22").value* document.getElementById("s33").value-document.getElementById("s23").value *document.getElementById("s32").value) - document.getElementById("s12").value * (document.getElementById("s21").value*document.getElementById("s33").value - document.getElementById("s23").value*document.getElementById("s31").value) + document.getElementById("s13").value*(document.getElementById("s21").value*document.getElementById("s32").value - document.getElementById("s22").value *document.getElementById("s31").value);
+			document.getElementById("definition").innerHTML ="|A| = "+document.getElementById('s11').value +'*'+document.getElementById('s22').value+"*"+document.getElementById('s33').value+' + '+document.getElementById('s12').value+'*'+document.getElementById('s23').value+'*'+document.getElementById('s31').value+' + '+document.getElementById('s13').value+'*'+document.getElementById('s21').value+'*'+document.getElementById('s32').value+' - '+document.getElementById('s13').value+'*'+document.getElementById('s22').value+'*'+document.getElementById('s31').value+' - '+document.getElementById('s11').value+'*'+document.getElementById('s23').value+'*'+document.getElementById('s32').value+' - '+document.getElementById('s12').value+'*'+document.getElementById('s21').value+'*'+document.getElementById('s33').value+" = "+ qwer;
+			document.getElementById("lorem").innerHTML = "Definition:";
+			document.getElementById("ipsum").innerHTML = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+		}
+	</script>
+  <head>
+    <link rel="stylesheet" href="style1.css">
+    <script src="script1.js" defer></script>
+  </head>
+  <body>
+  	<h3 id="task">Task-1</h3>
+  	<h1 id="calc">Calculate of the given matrix:</h1>
+  	<div id="back"></div>
+    <div id="matrix">
+      <input type="text" id="s11"/>
+      <input type="text" id="s12"/>
+      <input type="text" id="s13"/>
+      <input type="text" id="s21"/>
+      <input type="text" id="s22"/>
+      <input type="text" id="s23"/>
+      <input type="text" id="s31"/>
+      <input type="text" id="s32"/>
+      <input type="text" id="s33"/>
+    </div>
+    <button id="determinant" onclick="calculateDeterminant()">Find determinant &#8594;</button>
+    <div id="result">Result</div>
+    <div id="detresult"></div>
+    <div id="definition"></div>
+    <div id="lorem"></div>
+    <div id="ipsum"></div>
+  </body>
+
+</html>

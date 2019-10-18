@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task5_2</title>
+	<script>
+		var array = ["camry70.jpg", "Toyota_00.jpg", "670C.jpg", "Toyota_2A.jpg", "47E6.jpg"];
+		var length = array.length;
+		function forwardchange() {
+			if (length < array.length - 1) {
+				length++;
+			}
+			else{
+				length = 0;
+			}
+			document.getElementById('tyu').src = array[length];
+		}
+		function backchange() {
+			if (length < array.length+1 && length>1) {
+				length--
+			}
+			else{
+				length = array.length;
+			}
+			document.getElementById('tyu').src = array[length-1];
+		}
+		function image1(){
+			document.getElementById('tyu').src = "camry70.jpg";
+			document.getElementById("text").innerHTML = "The Toyota Camry (/ˈkæmri/; Japanese: トヨタ・カムリ Toyota Kamuri) is an automobile sold internationally by the Japanese manufacturer Toyota since 1982, spanning multiple generations. Originally compact in size (narrow-body), later Camry models have grown to fit the mid-size classification (wide-body)—although the two sizes co-existed in the 1990s.";
+		}
+		function image2(){
+			document.getElementById('tyu').src = "Toyota_00.jpg";
+			document.getElementById("text").innerHTML = "Between 1979 and 1982, the Camry nameplate was delegated to a four-door sedan model in Japan, known as the Celica Camry. When Camry became an independent model line in 1982 with the V10 series, Toyota made it available as a five-door liftback in addition to the sedan.";
+		}
+		function image3(){
+			document.getElementById('tyu').src = "670C.jpg";
+			document.getElementById("text").innerHTML = "When the Japanese market received a new narrow-body V40 series in 1994 to replace V30, the wide-body XV10 continued unchanged. Its replacement, the XV20, arrived in 1996—named Camry Gracia in Japan. It was not until the narrow V40 ended manufacture in 1998 that the Camry in Japan was to again mirror the cars sold internationally.";
+		}
+		function image4(){
+			document.getElementById('tyu').src = "Toyota_2A.jpg";
+			document.getElementById("text").innerHTML = "When Toyota launched their luxury Lexus brand in 1989, it offered a close derivative of the Camry/Vista hardtop sedan as the Lexus ES. The relationship continues to this day, but over the generations, the ES—sold as the Toyota Windom in Japan from 1991 through to 2005—gravitated further away from its Camry brethren.";
+		}
+		function image5(){
+			document.getElementById('tyu').src = "47E6.jpg";
+			document.getElementById("text").innerHTML = " Badge engineering has also occurred in Australia with the Holden Apollo between 1989 and 1996. From 1993, Toyota Australia badged V6-engined versions as Camry Vienta, becoming Toyota Vienta in 1995 until the badge's departure in 2000. ";
+		}
+	</script>
+	<style>
+		#bigImage{
+			position: absolute;
+			top: 50px;
+			left: 100px;
+			width: 100px;
+			height: 300px;
+
+		}#bigImage img{
+			position: absolute;
+			width: 1000px;
+			height: 600px;
+			z-index: -1;
+		}
+		#carousel{
+			display: flex;
+			border:2px solid white;
+			border-radius: 0px 8px 8px 8px;
+			background-color: white;
+			position: absolute;
+			left: 80px;
+			top: 480px;
+			width: 900px;
+		}
+		#carousel img{
+			width: 120px;
+			height: 120px;
+			margin: 15px;
+			box-shadow: 0px 2px 5px 5px #888888;
+		}
+		#lside{
+			position: absolute;
+			border:1px solid red;
+			height:150px;
+			width:4px;
+			background-color: red;
+		}
+		#forwardchange{
+			position: relative;
+			left: 800px;
+			top: 60px;
+			border:1px solid red;
+			border-radius: 20px;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+		}
+		#backchange{
+			position: relative;
+			left: 15px;
+			top: 60px;
+			width: 35px;
+			height: 35px;
+			border:1px solid red;
+			border-radius: 20px;
+			cursor: pointer;
+		}
+		#rside{
+			position: absolute;
+			right: 80px;
+			top: 30px;
+			border:1px solid black;
+			height: 650px;
+			width: 400px;
+			background-color: gray;
+			box-shadow: 10px 20px 50px 5px gray;
+			z-index: 2;
+		}
+		#first{
+			position: absolute;
+			font-size: 50px;
+			left:810px;
+			width: 400px;
+			color: white;
+			z-index: 3;
+			
+		}
+
+		#second{
+			position: absolute;
+			font-size: 50px;
+			left: 900px;
+			width: 400px;
+			color: white;
+			z-index: 3;
+			top: 60px;
+		}
+		#text{
+			font-size: 20px;
+			position: absolute;
+			top: 200px;
+			margin: 10px;
+		}
+		#Show{
+			position: absolute;
+			top: 501px;
+			left: 50px;
+			text-align: center;
+			width: 150px;
+			height: 40px;
+			border:1px solid white;
+			background-color: gray;
+			color: white;
+		}
+		#more{
+			position: absolute;
+			top: 500px;
+			left: 200px;
+			width: 40px;
+			height: 46px
+		}
+		::placeholder{
+			color: white;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="bigImage">
+		<img id="tyu" src="camry70.jpg"/>
+    	<p id="first">Here is the coolest</p>
+    	<p id="second">new car - Toyota</p>
+    </div>
+    <div id="rside">
+    	<p id="text">The Toyota Camry (/ˈkæmri/; Japanese: トヨタ・カムリ Toyota Kamuri) is an automobile sold internationally by the Japanese manufacturer Toyota since 1982, spanning multiple generations. Originally compact in size (narrow-body), later Camry models have grown to fit the mid-size classification (wide-body)—although the two sizes co-existed in the 1990s.</p>
+    	<input id="Show" type="text" name="Show More" placeholder="Show More">
+    	<button id="more">
+    		<div id="arrow3">&#8594;</div>
+    	</button>
+    </div>
+    <div id="carousel">
+    	<div id="lside"></div>
+    	<button id="backchange" onclick="backchange()">
+    		<div id="arrow1">&#8592;</div>
+    	</button>
+    	<button id="forwardchange" onclick="forwardchange()">
+    		<div id= "arrow2">&#8594;</div>
+    	</button>
+	          <img id="i1" src="camry70.jpg" onclick="image1()" />
+	          <img id="i2" src="Toyota_00.jpg" onclick="image2()" />
+	          <img id="i3" src="670C.jpg" onclick="image3()" />
+	          <img id="i4" src="Toyota_2A.jpg" onclick="image4()" />
+	          <img id="i5" src="47E6.jpg" onclick="image5()" />
+    </div>
+</body>
+</html>
