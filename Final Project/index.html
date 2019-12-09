@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final Project</title>
+</head>
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:500&display=swap');
+	*{
+		box-sizing: border-box;
+		margin: 0px;
+		padding: 0px; 
+		background-color: #24252A;
+	}
+	li, a, button{
+		font-family: 'Roboto Slab', serif;
+		font-weight: 500;
+		font-size: 16px;
+		color: #edf0f1;
+		text-decoration: none;
+	}
+	header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 10%;
+	}
+	.logo{
+		cursor: pointer;
+		width: 50px;
+		height: 50px;
+		border:1px solid white;
+		border-radius: 10px;
+	}
+	.nav_links{
+		list-style-type: none;
+	}
+	.nav_links li{
+		display: inline-block;
+		padding: 0px 100px;
+	}
+	.nav_links li a{
+		transition: all 0.3s ease 0s;
+	}
+	.nav_links li a:hover{
+		color:#0089a9; 
+	}
+	.menu a:hover{
+		color:#0089a9;
+		transition: all 0.3s ease 0s; 
+	}
+	.bor{
+		border:2px solid white;
+		position: fixed;
+		width: 100%;
+	}
+	button{
+		padding: 9px 25px;
+		background-color: rgba(0, 136, 169, 1);
+		border: none;
+		border-radius: 50px;
+		cursor: pointer;
+		transition: all 0.3s ease 0s;	
+	}
+	button:hover{
+		background-color: rgba(0, 136, 169, 0.8);
+	}
+	.content{
+		display: flex;
+	}
+	#about{
+		position: relative;
+		top: 100px;
+		left: 150px;
+	}
+	#text_about{
+		position: absolute;
+		top: 130px;
+		margin: 10px;
+	}
+	#video_blog{
+	}
+	#learn{
+		width: 700px;
+		border:1px solid white;
+		border-radius: 20px;
+		height: 800px;		
+	}
+	#video_play_button{
+		position: absolute;
+	    text-align: center;
+	    border-radius: 50%;
+	    top: 50%;
+	    left: 21%;
+	    height: 68px;
+	    width: 68px;
+		z-index: 1;
+		background-color: #5ec45e;
+		font-size: 34px;
+	}
+	.main{
+		position: absolute;
+		z-index: 2;
+	}
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgb(0,0,0);
+		background-color: rgba(0,0,0,0.4);
+	}
+
+	.modal-content {
+		margin-left: 150px;
+		border: 1px solid #888;
+		width: 40%;
+	}
+
+	.close {
+		color: #aaa;
+  		float: right;
+  		font-size: 28px;
+  		font-weight: bold;
+	}	
+
+	.close:hover,.close:focus {
+		color: black;
+  		text-decoration: none;
+  		cursor: pointer;
+	}
+	#categories{
+		margin: 20px;
+		font-size: 70px;
+		text-align: center;
+	}
+	.courses{
+		margin-left: 100px;
+		margin-right: 100px;
+		margin-top: 50px; 
+	}
+	#text{
+		font-size: 30px;
+		font-family: 'Roboto Slab', serif;
+	}
+	</style>
+<body>
+	<div class="main">
+		<div class="bor">
+			<header class="menu">
+				<div style="display: flex; width: 150px;">
+				<img class = "logo" src="logo_of_site.png">
+				<a href="#" style="font-size: 17px; overflow: auto; padding-left: 10px;">Қазақша білім беру порталы</a>
+				</div>
+				<nav>
+					<ul class="nav_links">
+						<li><a href="#courseces">Курстар</a></li>
+						<li><a href="#library">Кітапхана</a></li>
+						<li><a href="#about">Жоба туралы</a></li>
+					</ul>
+				</nav>
+				<a class="log_in" href="#log_in"><button>Кіру</button></a>
+			</header>
+		</div>
+	</div>
+	<div>
+		<div class="content">
+				<div id="video_blog">
+					<img id="learn" src="Learn.jpg">
+					<button id="video_play_button" onclick="video_play()">▶</button>
+				</div>
+				<div id="content_blog">
+					<div id="about">
+						<h1>About INFOMATRIX</h1>
+					</div>
+					<div id="text_about">
+						<h1>INFOMATRIX is an international computer-based project competition, born from a desire to unite the world's best IT students. The INFOMATRIX-ASIA was originated from the INFOMATRIX competition that is held in Bucharest Romania, in order to expand the horizons of the competition and provide more opportunity for students to participate in. The competition is not just about promoting professional excellence; it also serves to promote intercultural relationship and cooperation, through the involvement of students and teachers from many different countries. Starting from 2013, Suleyman Demirel University (SDU) organizes INFOMATRIX-ASIA competition in Kaskelen and Almaty, Kazakhstan. This year, SDU is pleased to announce the 8th INFOMATRIX-ASIA computer-based project competition, which will feature more interesting and challenging categories for students around the world. Nearly 400 students from more than 28 countries participate in various categories.</h1>
+					</div>
+				</div>
+		</div>
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+   				<span class="close">&times;</span>
+    			<iframe width="800" height="700" src="https://www.youtube.com/embed/JC82Il2cjqA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  			</div>
+		</div>
+	</div>
+	<div class="courses">
+		<div>
+			<div id="categories">
+				<p>Categories</p>
+			</div>
+			<div id="text"><p>
+				INFOMATRIX is an international computer-based project competition, born from a desire to unite the world's best IT students. The INFOMATRIX-ASIA was originated from the INFOMATRIX competition that is held in Bucharest Romania, in order to expand the horizons of the competition and provide more opportunity for students to participate in. The competition is not just about promoting professional excellence; it also serves to promote intercultural relationship and cooperation, through the involvement of students and teachers from many different countries. Starting from 2013, Suleyman Demirel University (SDU) organizes INFOMATRIX-ASIA competition in Kaskelen and Almaty, Kazakhstan. This year, SDU is pleased to announce the 8th INFOMATRIX-ASIA computer-based project competition, which will feature more interesting and challenging categories for students around the world. Nearly 400 students from more than 28 countries participate in various categories.</p>
+			</div>
+		</div>
+	</div>
+	<script>
+		var modal = document.getElementById("myModal");
+		var btn = document.getElementById("video_play_button");
+		var span = document.getElementsByClassName("close")[0];
+		btn.onclick = function() {
+		  modal.style.display = "block";
+		}
+		span.onclick = function() {
+		  modal.style.display = "none";
+		}
+		window.onclick = function(event) {
+		  if (event.target == modal) {
+		    modal.style.display = "none";
+		  }
+		}
+	</script>
+</body>
+</html>
